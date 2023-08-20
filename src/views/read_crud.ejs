@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cread-crud</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Email</th>
+            <th>Pasword</th>
+            <th>firstName</th>
+            <th>Action</th>
+        </tr>
+
+        <% for(let i=0; i < readCrud.length; i++) { %>
+            <tr>
+                <td>
+                    <%= readCrud[i].email %>
+                </td>
+                <td>
+                    <%= readCrud[i].password %>
+                </td>
+                <td>
+                    <%= readCrud[i].firstName %>
+                </td>
+                <td>
+                    <a href="/edit-crud?id=<%= readCrud[i].id %>" type="button">Edit</a>
+                    <a href="/delete-crud?id=<%= readCrud[i].id %>">Delete</a>
+
+                </td>
+                
+
+            </tr>
+            <% } %>
+
+    </table>
+</body>
+
+</html>
